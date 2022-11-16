@@ -21,6 +21,11 @@ class TaskAdapter : RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
         holder.bind(tasks.get(position))
     }
 
+    fun addTask(task: Task){
+        tasks.add(0,task)
+        notifyItemChanged(0)
+    }
+
     override fun getItemCount(): Int = tasks.size
 
 

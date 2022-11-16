@@ -5,6 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
+import androidx.fragment.app.setFragmentResult
+import androidx.navigation.fragment.findNavController
+import com.murat.taskmanager.R
+import com.murat.taskmanager.data.Task
 import com.murat.taskmanager.databinding.FragmentTaskBinding
 
 class TaskFragment : Fragment() {
@@ -17,6 +22,26 @@ class TaskFragment : Fragment() {
        binding = FragmentTaskBinding.inflate(inflater,container,false)
         return binding.root
     }
+
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.btnSave.setOnClickListener {
+            if (binding.etTitle.text.toString().isNotEmpty()){
+                saveTask()
+            }else{binding.etTitle.error = getString(R.string.error_title)}
+        }
+
+
+    }
+    private fun saveTask(){  val data = Task(
+        binding.etTitle.text.toString(),
+        binding.etDesc.text.toString()
+    )
+        setFragmentResult("fr_task", bundleOf("task" to data))
+        findNavController().navigateUp()
+    }
+
 
 
 }

@@ -10,5 +10,11 @@
     <string name="title">Title</string>
     <string name="username">Username</string>
     <string name="save">Save</string>
+    <string name="error_title">Заполните поле</string>
+    <string name="skip">Skip</string>
+    <string name="title_onboard">Title</string>
+    <string name="desc">Description</string>
+    <string name="get_started">Get started</string>
+    <string name="task">vbfhvh</string>
 
 </resources>

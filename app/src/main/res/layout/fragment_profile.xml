@@ -26,12 +26,14 @@
      android:layout_marginTop="20dp"
      android:layout_marginHorizontal="24dp"
      android:hint="@string/username"
+     android:theme="@style/MyTextInputLayout_overlay"
      style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
   <com.google.android.material.textfield.TextInputEditText
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:inputType="textPersonName"
+
       />
  </com.google.android.material.textfield.TextInputLayout>
 
