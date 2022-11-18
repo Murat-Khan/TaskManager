@@ -3,22 +3,31 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:background="@drawable/stroke_task"
+    android:layout_marginTop="8dp"
+    android:layout_marginHorizontal="10dp"
+
+    >
 
     <TextView
         android:id="@+id/tv_title"
         android:text="Title"
+        android:textStyle="bold"
         android:layout_width="wrap_content"
+        android:layout_marginHorizontal="16dp"
         android:layout_height="wrap_content"
         android:textSize="24sp"
         android:textColor="@color/black"/>
     <TextView
         android:id="@+id/tv_description"
-        android:text="Title"
+        android:text="Description"
+        android:layout_marginHorizontal="16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="24sp"
-        android:layout_marginTop="4dp"
+        android:layout_marginBottom="12dp"
+
         />
+
 
 </LinearLayout>

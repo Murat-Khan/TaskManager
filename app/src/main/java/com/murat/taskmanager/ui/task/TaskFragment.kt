@@ -9,7 +9,7 @@ import androidx.core.os.bundleOf
 import androidx.fragment.app.setFragmentResult
 import androidx.navigation.fragment.findNavController
 import com.murat.taskmanager.R
-import com.murat.taskmanager.data.Task
+import com.murat.taskmanager.data.model.Task
 import com.murat.taskmanager.databinding.FragmentTaskBinding
 
 class TaskFragment : Fragment() {

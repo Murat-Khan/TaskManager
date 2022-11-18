@@ -1,10 +1,9 @@
 package com.murat.taskmanager.ui.task
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.murat.taskmanager.data.Task
+import com.murat.taskmanager.data.model.Task
 import com.murat.taskmanager.databinding.ItemTaskBinding
 
 class TaskAdapter : RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {

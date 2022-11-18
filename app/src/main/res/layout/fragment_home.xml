@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment"
-    android:padding="16dp">
+    >
 
   <com.google.android.material.floatingactionbutton.FloatingActionButton
      android:id="@+id/fab_edit"
@@ -21,6 +21,46 @@
   <androidx.recyclerview.widget.RecyclerView
       android:id="@+id/task_recycler"
       app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"/>
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintBottom_toBottomOf="parent"
+      />
+    <LinearLayout
+        android:id="@+id/empty_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:background="@drawable/add_task"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Задач нет"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="28sp"
+            />
+        <TextView
+            android:id="@+id/add_list_task"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Добовляйте списки задач"
+            android:textStyle="bold"
+            />
+
+
+
+    </LinearLayout>
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

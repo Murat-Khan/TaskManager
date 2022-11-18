@@ -1,4 +1,4 @@
-package com.murat.taskmanager.data
+package com.murat.taskmanager.data.model
 
 data class Task(
     var title : String? = null,
