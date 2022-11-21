@@ -26,15 +26,11 @@ private lateinit var pref : Pref
      binding = ActivityMainBinding.inflate(layoutInflater)
      setContentView(binding.root)
         pref = Pref(this)
-
         val navView: BottomNavigationView = binding.navView
-
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
 
         if (pref.isBoardingShow()){
-            navController.navigate(R.id.onBoardingFragment)
-
-        }
+            navController.navigate(R.id.onBoardingFragment) }
 
 
 

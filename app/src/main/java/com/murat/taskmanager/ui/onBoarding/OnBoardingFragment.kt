@@ -39,7 +39,6 @@ class OnBoardingFragment : Fragment() {
         binding.btnStarted.setOnClickListener {
             pref.saveBoardingShow(true)
             findNavController().navigateUp()
-
         }
         binding.skip.setOnClickListener {
             pref.saveBoardingShow(true)

@@ -15,4 +15,5 @@
     <string name="title_onboard">Title</string>
     <string name="desc">Description</string>
     <string name="get_started">Get started</string>
+    <string name="age">Age</string>
 </resources>
