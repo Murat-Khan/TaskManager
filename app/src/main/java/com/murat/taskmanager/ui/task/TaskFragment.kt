@@ -1,13 +1,11 @@
 package com.murat.taskmanager.ui.task
-
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
-import androidx.fragment.app.setFragmentResult
 import androidx.navigation.fragment.findNavController
+import com.murat.taskmanager.App
 import com.murat.taskmanager.R
 import com.murat.taskmanager.data.model.Task
 import com.murat.taskmanager.databinding.FragmentTaskBinding
@@ -18,7 +16,7 @@ class TaskFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
        binding = FragmentTaskBinding.inflate(inflater,container,false)
         return binding.root
     }
@@ -35,10 +33,11 @@ class TaskFragment : Fragment() {
 
     }
     private fun saveTask(){  val data = Task(
-        binding.etTitle.text.toString(),
-        binding.etDesc.text.toString()
+      title =  binding.etTitle.text.toString(),
+       desc = binding.etDesc.text.toString()
     )
-        setFragmentResult("fr_task", bundleOf("task" to data))
+
+        App.db.taskDao().insert(data)
         findNavController().navigateUp()
     }
 

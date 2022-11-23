@@ -16,7 +16,8 @@
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       android:layout_margin="16dp"
-      />
+      android:contentDescription=""
+      tools:ignore="ContentDescription" />
 
   <androidx.recyclerview.widget.RecyclerView
       android:id="@+id/task_recycler"
@@ -28,38 +29,6 @@
       app:layout_constraintTop_toTopOf="parent"
       app:layout_constraintBottom_toBottomOf="parent"
       />
-    <LinearLayout
-        android:id="@+id/empty_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center">
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="240dp"
-            android:background="@drawable/add_task"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Задач нет"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:textSize="28sp"
-            />
-        <TextView
-            android:id="@+id/add_list_task"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Добовляйте списки задач"
-            android:textStyle="bold"
-            />
-
-
-
-    </LinearLayout>
 
 
 

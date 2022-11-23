@@ -16,4 +16,6 @@
     <string name="desc">Description</string>
     <string name="get_started">Get started</string>
     <string name="age">Age</string>
+    <string name="title_task">Title</string>
+    <string name="description_task">Description</string>
 </resources>
