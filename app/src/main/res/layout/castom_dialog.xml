@@ -21,7 +21,7 @@
 
             <TextView
                 android:textAlignment="center"
-                android:id="@+id/alert_title"
+                android:id="@+id/dialog_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:visibility="visible"
@@ -38,7 +38,7 @@
                 android:background="@color/white">
 
                 <TextView
-                    android:id="@+id/alert_message"
+                    android:id="@+id/dialog_message"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
@@ -54,7 +54,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:visibility="gone"
-                    android:layout_below="@id/alert_message"
+                    android:layout_below="@id/dialog_message"
                     android:background="@color/white"/>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -65,7 +65,7 @@
                     android:layout_marginVertical="8dp">
 
                     <TextView
-                        android:id="@+id/alert_delete"
+                        android:id="@+id/dialog_delete"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:gravity="center"
@@ -79,7 +79,7 @@
                         android:textAllCaps="true"
                         android:paddingHorizontal="8dp"/>
                     <TextView
-                        android:id="@+id/alert_cancel"
+                        android:id="@+id/dialog_confirm"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:gravity="center"

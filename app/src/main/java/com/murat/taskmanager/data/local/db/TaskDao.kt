@@ -9,7 +9,7 @@ import com.murat.taskmanager.data.model.Task
 
 @Dao
 interface TaskDao {
-    @Query("SELECT * FROM task")
+    @Query("SELECT * FROM task ORDER BY id DESC")
     fun getAllTask() : List<Task>
 
     @Insert

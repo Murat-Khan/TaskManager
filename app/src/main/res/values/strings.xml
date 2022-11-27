@@ -18,4 +18,6 @@
     <string name="age">Age</string>
     <string name="title_task">Title</string>
     <string name="description_task">Description</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
 </resources>

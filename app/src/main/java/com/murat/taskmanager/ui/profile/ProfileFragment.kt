@@ -11,7 +11,7 @@ import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import com.murat.taskmanager.data.local.Pref
 import com.murat.taskmanager.databinding.FragmentProfileBinding
-import com.murat.taskmanager.loadImage
+import com.murat.taskmanager.utils.loadImage
 
 
 

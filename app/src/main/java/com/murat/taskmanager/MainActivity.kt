@@ -28,7 +28,6 @@ private lateinit var pref : Pref
         pref = Pref(this)
         val navView: BottomNavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
-
         if (pref.isBoardingShow()){
             navController.navigate(R.id.onBoardingFragment) }
 

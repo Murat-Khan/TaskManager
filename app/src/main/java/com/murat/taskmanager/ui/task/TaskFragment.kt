@@ -12,6 +12,8 @@ import com.murat.taskmanager.databinding.FragmentTaskBinding
 
 class TaskFragment : Fragment() {
     private lateinit var binding: FragmentTaskBinding
+    private var task : Task? = null
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,15 +26,42 @@ class TaskFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        arguments?.let {
+            val value = it.getSerializable("task")
+            if (value != null){
+                task = value as Task
+            }
+            binding.etTitle.setText(task?.title.toString())
+            binding.etDesc.setText(task?.desc.toString())
+            if (task != null)
+                binding.btnSave.text = "Update"
+            else binding.btnSave.text = "Save" }
+
+
+
+
         binding.btnSave.setOnClickListener {
             if (binding.etTitle.text.toString().isNotEmpty()){
-                saveTask()
+                if (task != null){
+                    upDateTask()
+                }
+               else saveTask()
             }else{binding.etTitle.error = getString(R.string.error_title)}
         }
 
 
     }
-    private fun saveTask(){  val data = Task(
+
+    private fun upDateTask() {
+
+        task?.title = binding.etTitle.text.toString()
+        task?.desc = binding.etDesc.text.toString()
+
+        task?.let { App.db.taskDao().update(it) }
+        findNavController().navigateUp()    }
+
+    private fun saveTask(){
+        val data = Task(
       title =  binding.etTitle.text.toString(),
        desc = binding.etDesc.text.toString()
     )

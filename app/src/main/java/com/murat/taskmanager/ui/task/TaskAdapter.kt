@@ -1,13 +1,22 @@
 package com.murat.taskmanager.ui.task
 
 import android.annotation.SuppressLint
+import android.content.Context
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.murat.taskmanager.R
 import com.murat.taskmanager.data.model.Task
 import com.murat.taskmanager.databinding.ItemTaskBinding
 
-class TaskAdapter (var onClick:(task: Task)->Unit): RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
+class TaskAdapter (
+    private val onLongClick:(task: Task)->Unit,
+    private val onClick :(Task)->Unit,
+private val context: Context
+
+): RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
     private val tasks = arrayListOf<Task>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
@@ -46,13 +55,28 @@ class TaskAdapter (var onClick:(task: Task)->Unit): RecyclerView.Adapter<TaskAda
         RecyclerView.ViewHolder(binding.root) {
 
 
-        fun bind(task: Task) {
+
+        fun bind(task: Task, ) {
             itemView.setOnLongClickListener() {
-                onClick(task)
+                onLongClick(task)
                 false
             }
             binding.tvTitle.text = task.title
             binding.tvDescription.text = task.desc
+
+            binding.root.setOnClickListener {
+                onClick(task)
+            }
+            if (adapterPosition%2 == 0){
+                binding.root.setBackgroundColor(ContextCompat.getColor(context, R.color.black))
+                binding.tvDescription.setTextColor(ContextCompat.getColor(context, R.color.white))
+                binding.tvTitle.setTextColor(ContextCompat.getColor(context, R.color.white))
+
+            }else{
+                binding.root.setBackgroundColor(ContextCompat.getColor(context, R.color.white))
+                binding.tvDescription.setTextColor(ContextCompat.getColor(context, R.color.black))
+                binding.tvTitle.setTextColor(ContextCompat.getColor(context, R.color.black))
+            }
 
 
         }

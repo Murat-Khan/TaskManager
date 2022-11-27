@@ -7,20 +7,21 @@ import android.view.ViewGroup
 
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Adapter
+import com.murat.taskmanager.R
 
 import com.murat.taskmanager.data.model.OnBoard
 import com.murat.taskmanager.databinding.ItemOnBoardingBinding
 
-import com.murat.taskmanager.loadImage
+
 
 
 
 class OnBoardingAdapter : Adapter<OnBoardingAdapter.OnBoardingViewHolder>() {
 
     private val arrayList = arrayListOf<OnBoard>(
-        OnBoard("https://img.freepik.com/free-vector/business-man-with-a-pencil-a-marked-checklist-on-a-clipboard-paper-successful-forming-of-business-tasks-flat-illustration_114482-134.jpg?size=626&ext=jpg","Manage your Task", "Organize all your to-dos in lists and projects. Color tog them to set priorities ond categories."),
-        OnBoard("https://kolejidea.com/wp-content/uploads/2020/07/idea-koleji-burs.jpg","Work on Time","When you're overwheimed by the amount af work you have on your plate, stop and rethink."),
-        OnBoard("https://thumbs.dreamstime.com/b/символ-офисный-работник-выполняемые-с-заднее-поджечь-крайний-срок-и-в-179595708.jpg","Get reminder on time","When you encounter a small task that tokes less than 5 minutes to complete, just get it done.")
+        OnBoard(R.raw.lottie_1,"Manage your Task", "Organize all your to-dos in lists and projects. Color tog them to set priorities ond categories."),
+        OnBoard(R.raw.lottie_2,"Work on Time" , "When you're overwhelmed by the amount af work you have on your plate, stop and rethink."),
+        OnBoard(R.raw.lottie_3,"Get reminder on time","When you encounter a small task that tokes less than 5 minutes to complete, just get it done.")
     )
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OnBoardingViewHolder {
        return OnBoardingViewHolder(
@@ -41,8 +42,10 @@ class OnBoardingAdapter : Adapter<OnBoardingAdapter.OnBoardingViewHolder>() {
             /* binding.btnStarted.isVisible = adapterPosition == arrayList.lastIndex
             binding.skip.isVisible = adapterPosition != arrayList.lastIndex*/
             binding.onBoardTitle.text = onBoard.title
-            binding.onBoardDesc.text =onBoard.desc
-            binding.onBordImage.loadImage(onBoard.image)
+            binding.onBoardDesc.text = onBoard.desc
+
+            onBoard.image?.let { binding.onBordImage.setAnimation(it) }
+
         }
         }
 
