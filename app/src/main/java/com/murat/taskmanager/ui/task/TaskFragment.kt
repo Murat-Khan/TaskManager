@@ -58,7 +58,7 @@ class TaskFragment : Fragment() {
         task?.desc = binding.etDesc.text.toString()
 
         task?.let { App.db.taskDao().update(it) }
-        findNavController().navigateUp()    }
+        findNavController().navigateUp()}
 
     private fun saveTask(){
         val data = Task(

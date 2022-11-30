@@ -2,7 +2,6 @@ package com.murat.taskmanager.ui.task
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
@@ -56,8 +55,8 @@ private val context: Context
 
 
 
-        fun bind(task: Task, ) {
-            itemView.setOnLongClickListener() {
+        fun bind(task: Task ) {
+            itemView.setOnLongClickListener {
                 onLongClick(task)
                 false
             }
@@ -68,9 +67,9 @@ private val context: Context
                 onClick(task)
             }
             if (adapterPosition%2 == 0){
-                binding.root.setBackgroundColor(ContextCompat.getColor(context, R.color.black))
-                binding.tvDescription.setTextColor(ContextCompat.getColor(context, R.color.white))
-                binding.tvTitle.setTextColor(ContextCompat.getColor(context, R.color.white))
+                binding.root.setBackgroundColor(ContextCompat.getColor(context,R.color.black))
+                binding.tvDescription.setTextColor(ContextCompat.getColor(context,R.color.white))
+                binding.tvTitle.setTextColor(ContextCompat.getColor(context,R.color.white))
 
             }else{
                 binding.root.setBackgroundColor(ContextCompat.getColor(context, R.color.white))

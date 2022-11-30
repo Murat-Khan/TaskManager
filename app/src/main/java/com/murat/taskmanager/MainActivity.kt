@@ -12,6 +12,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.google.firebase.auth.FirebaseAuth
 import com.murat.taskmanager.data.local.Pref
 import com.murat.taskmanager.databinding.ActivityMainBinding
 
@@ -29,7 +30,11 @@ private lateinit var pref : Pref
         val navView: BottomNavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
         if (pref.isBoardingShow()){
-            navController.navigate(R.id.onBoardingFragment) }
+            navController.navigate(R.id.onBoardingFragment)
+        }
+        if (FirebaseAuth.getInstance().currentUser?.uid == null){
+            navController.navigate(R.id.auhtFragment)
+        }
 
 
 
@@ -42,6 +47,7 @@ private lateinit var pref : Pref
             R.id.navigation_notifications,
             R.id.taskFragment,
             R.id.navigation_profile,
+            R.id.auhtFragment
 
         ))
 

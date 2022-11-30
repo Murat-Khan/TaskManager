@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback
+import com.google.firebase.auth.FirebaseAuth
+import com.murat.taskmanager.R
 import com.murat.taskmanager.data.local.Pref
 import com.murat.taskmanager.data.model.OnBoard
 import com.murat.taskmanager.databinding.FragmentOnBoardingBinding
@@ -17,6 +19,7 @@ import com.murat.taskmanager.ui.onBoarding.adapter.OnBoardingAdapter
 class OnBoardingFragment : Fragment() {
     lateinit var binding: FragmentOnBoardingBinding
     lateinit var pref: Pref
+    private lateinit var auth: FirebaseAuth
 
 
     override fun onCreateView(
@@ -32,17 +35,28 @@ class OnBoardingFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         pref = Pref(requireContext())
+        auth = FirebaseAuth.getInstance()
         val adapter = OnBoardingAdapter()
         binding.viewPager.adapter = adapter
         binding.indicator.setViewPager(binding.viewPager)
         adapter.registerAdapterDataObserver(binding.indicator.adapterDataObserver)
         binding.btnStarted.setOnClickListener {
-            pref.saveBoardingShow(true)
-            findNavController().navigateUp()
+            if (auth.currentUser?.uid == null){
+                findNavController().navigate(R.id.auhtFragment)
+            }else{
+                pref.saveBoardingShow(true)
+                findNavController().navigateUp()
+            }
+
         }
         binding.skip.setOnClickListener {
-            pref.saveBoardingShow(true)
-            findNavController().navigateUp()
+
+            if (auth.currentUser?.uid == null){
+                findNavController().navigate(R.id.auhtFragment)
+            }else{
+                pref.saveBoardingShow(true)
+                findNavController().navigateUp()
+            }
         }
 
         binding.viewPager.registerOnPageChangeCallback(object : OnPageChangeCallback(){

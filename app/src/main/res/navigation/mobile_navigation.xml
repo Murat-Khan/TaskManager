@@ -37,4 +37,9 @@
         android:name="com.murat.taskmanager.ui.onBoarding.OnBoardingFragment"
         android:label="fragment_on_boarding"
         tools:layout="@layout/fragment_on_boarding" />
+    <fragment
+        android:id="@+id/auhtFragment"
+        android:name="com.murat.taskmanager.ui.auht.AuthFragment"
+        android:label="Регистрация"
+        tools:layout="@layout/fragment_auht" />
 </navigation>

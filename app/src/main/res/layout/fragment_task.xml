@@ -11,9 +11,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
-
-
         <com.google.android.material.textfield.TextInputEditText
             android:drawableStart="@drawable/ic_title"
             android:id="@+id/et_title"

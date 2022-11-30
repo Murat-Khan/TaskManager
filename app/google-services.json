@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "762765178574",
+    "project_id": "taskmanager-c0c0e",
+    "storage_bucket": "taskmanager-c0c0e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:762765178574:android:b0e5845b9ea1d69c0dc29f",
+        "android_client_info": {
+          "package_name": "com.murat.taskmanager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "762765178574-22ev8od86akdu8gk6pnkg9ns87jul8kd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBiKPv1VqFDkgtJbMMMLGhhhPa7f4EgdOo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "762765178574-22ev8od86akdu8gk6pnkg9ns87jul8kd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
