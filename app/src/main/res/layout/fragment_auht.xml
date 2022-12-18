@@ -54,7 +54,7 @@ android:padding="20dp"
             android:layout_height="wrap_content">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editSMS"
-android:visibility="gone"
+                android:visibility="gone"
                 android:inputType="number"
                 android:hint="Введите SMS код"
                 android:layout_height="wrap_content"

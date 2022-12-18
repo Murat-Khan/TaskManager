@@ -2,6 +2,7 @@ package com.murat.taskmanager.ui.task
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
@@ -9,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.murat.taskmanager.R
 import com.murat.taskmanager.data.model.Task
 import com.murat.taskmanager.databinding.ItemTaskBinding
+import java.util.*
 
 class TaskAdapter (
     private val onLongClick:(task: Task)->Unit,
@@ -66,7 +68,16 @@ private val context: Context
             binding.root.setOnClickListener {
                 onClick(task)
             }
-            if (adapterPosition%2 == 0){
+            val random = Random()
+            val color =
+                Color.argb(
+                    255, random.nextInt(256),
+                    random.nextInt(256), random.nextInt(256)
+                )
+           binding.ibColor.setBackgroundColor(color)
+
+
+            /*if (adapterPosition%2 == 0){
                 binding.root.setBackgroundColor(ContextCompat.getColor(context,R.color.black))
                 binding.tvDescription.setTextColor(ContextCompat.getColor(context,R.color.white))
                 binding.tvTitle.setTextColor(ContextCompat.getColor(context,R.color.white))
@@ -75,7 +86,7 @@ private val context: Context
                 binding.root.setBackgroundColor(ContextCompat.getColor(context, R.color.white))
                 binding.tvDescription.setTextColor(ContextCompat.getColor(context, R.color.black))
                 binding.tvTitle.setTextColor(ContextCompat.getColor(context, R.color.black))
-            }
+            }*/
 
 
         }

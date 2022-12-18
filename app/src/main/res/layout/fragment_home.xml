@@ -11,6 +11,8 @@
   <com.google.android.material.floatingactionbutton.FloatingActionButton
      android:id="@+id/fab_edit"
       android:layout_width="wrap_content"
+      android:backgroundTint="@color/colorPrimary"
+      android:tintMode="@color/white"
       android:layout_height="wrap_content"
       android:src="@drawable/ic_edit"
       app:layout_constraintBottom_toBottomOf="parent"
@@ -21,8 +23,11 @@
 
   <androidx.recyclerview.widget.RecyclerView
       android:id="@+id/task_recycler"
-      app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+      app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
       android:layout_width="0dp"
+
+      app:spanCount="2"
+      android:orientation="vertical"
       android:layout_height="0dp"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
